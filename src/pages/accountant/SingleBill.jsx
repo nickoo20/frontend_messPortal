@@ -22,7 +22,7 @@ const StudentBill = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`http://localhost:8080/api/bills/${registrationNumber}`, {
+      const response = await axios.get(`https://backend-messportal.onrender.com/api/bills/${registrationNumber}`, {
         withCredentials: true,
         params: { month, year },
       });

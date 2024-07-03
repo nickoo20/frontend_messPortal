@@ -61,7 +61,7 @@ const RegisterStudent = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/auth/register-student",
+        "https://backend-messportal.onrender.com/api/auth/register-student",
         formData,
         {
           withCredentials: true,

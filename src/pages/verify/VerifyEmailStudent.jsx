@@ -17,7 +17,7 @@ const VerifyEmailStudent = () => {
 
     const verifyEmail = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/auth/verify-email`, {
+        const res = await axios.get(`https://backend-messportal.onrender.com/api/auth/verify-email`, {
           params: { token },
         });
         console.log(res);

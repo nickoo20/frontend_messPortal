@@ -12,7 +12,7 @@ const StudentList = () => {
   const fetchStudents = async () => {
     setLoading(true); // Start loading spinner
     try {
-      const response = await axios.get('http://localhost:8080/api/students', {
+      const response = await axios.get('https://backend-messportal.onrender.com/api/students', {
         withCredentials: true,
         params: { search },
       });

@@ -31,7 +31,7 @@ const AddMenu = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8080/api/menu/add",
+        "https://backend-messportal.onrender.com/api/menu/add",
         formData,
         {
           headers: {

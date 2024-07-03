@@ -50,7 +50,7 @@ const SidebarAdmin = () => {
   const handleLogout = async () => {
     try {
       dispatch(signOutAdminStart());
-      const res = await axios.post('http://localhost:8080/api/auth/logout', {}, {
+      const res = await axios.post('https://backend-messportal.onrender.com/api/auth/logout', {}, {
         withCredentials: true,
       });
       if (res?.data.success === false) {

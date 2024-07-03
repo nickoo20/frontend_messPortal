@@ -9,11 +9,11 @@ const useGetMyComplaints = (id) => {
     const fetchComplaints = async () => {
         try {
         //   console.log(`Fetching complaints for ID: ${id}`);
-            const response = await axios.get(`http://localhost:8080/api/complaints/my/${id}`,{
+            const response = await axios.get(`https://backend-messportal.onrender.com/api/complaints/my/${id}`,{
               withCredentials:true,
             });
              // Debugging: Log the response
-            //  console.log('API Response:', response.data);
+             console.log('My Complaints :', response.data);
              dispatch(getMyComplaints(response?.data)) ; 
             // setComplaints(response?.data) ;
         } catch (err) {

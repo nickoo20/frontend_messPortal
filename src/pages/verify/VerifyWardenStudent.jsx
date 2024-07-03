@@ -18,7 +18,7 @@ const VerifyWardenStudent = () => {
 
     const verifyWarden = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/auth/verify-warden`, {
+        const res = await axios.get(`https://backend-messportal.onrender.com/api/auth/verify-warden`, {
           params: { token }
         });
         console.log(res);

@@ -16,7 +16,7 @@ const Header = () => {
   const handleLogoutStudent = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await axios.post('http://localhost:8080/api/auth/logout-student', {}, {
+      const res = await axios.post('https://backend-messportal.onrender.com/api/auth/logout-student', {}, {
         withCredentials: true,
       });
       if (res?.data.success === false) {
@@ -35,7 +35,7 @@ const Header = () => {
   const handleLogoutAdmin = async () => {
     try {
       dispatch(signOutAdminStart());
-      const res = await axios.post('http://localhost:8080/api/auth/logout', {}, {
+      const res = await axios.post('https://backend-messportal.onrender.com/api/auth/logout', {}, {
         withCredentials: true,
       });
       if (res?.data.success === false) {

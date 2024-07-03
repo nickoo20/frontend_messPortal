@@ -22,12 +22,12 @@ const ExpenseManager = () => {
     setLoading(true);
     try {
       if (searchHostelName) {
-        const res = await axios.post('http://localhost:8080/api/expense/single-hostel-expense', {
+        const res = await axios.post('https://backend-messportal.onrender.com/api/expense/single-hostel-expense', {
           searchHostelName
         });
         setExpenses(res.data.exp);
       } else {
-        const res = await axios.get('http://localhost:8080/api/expense');
+        const res = await axios.get('https://backend-messportal.onrender.com/api/expense');
         setExpenses(res.data.exp);
       }
     } catch (error) {
@@ -45,7 +45,7 @@ const ExpenseManager = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:8080/api/expense', newExpense);
+      await axios.post('https://backend-messportal.onrender.com/api/expense', newExpense);
       toast.success('Expense added successfully!');
       fetchExpenses();
       setNewExpense({
@@ -67,7 +67,7 @@ const ExpenseManager = () => {
   const handleDeleteExpense = async (id) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:8080/api/expense/delete-expense/${id}`);
+      await axios.delete(`https://backend-messportal.onrender.com/api/expense/delete-expense/${id}`);
       toast.success('Expense deleted successfully!');
       fetchExpenses();
     } catch (error) {

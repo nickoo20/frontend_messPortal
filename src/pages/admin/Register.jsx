@@ -22,7 +22,7 @@ const Register = () => {
     try {
       
       const res = await axios.post(
-        `http://localhost:8080/api/auth/register-admin`,
+        `https://backend-messportal.onrender.com/api/auth/register-admin`,
         { name, email, password, role }
       );
       console.log(res);

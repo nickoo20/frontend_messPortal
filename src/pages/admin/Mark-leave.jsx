@@ -22,7 +22,7 @@ const MarkLeave = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/mark-leave', inputData, {
+      const response = await axios.post('https://backend-messportal.onrender.com/api/mark-leave', inputData, {
         withCredentials: true,
       });
 

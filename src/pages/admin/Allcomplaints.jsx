@@ -69,7 +69,7 @@ const AllComplaints = () => {
     const fetchComplaints = async () => {
       setLoadingComplaints(true);
       try {
-        const response = await axios.get("http://localhost:8080/api/complaints", {
+        const response = await axios.get("https://backend-messportal.onrender.com/api/complaints", {
           withCredentials: true,
         });
         setComplaints(response.data.comp1);
@@ -88,7 +88,7 @@ const AllComplaints = () => {
     try {
       setResolving(true);
       setResolvingComplaintId(id);
-      await axios.patch(`http://localhost:8080/api/complaints/${id}`, { status }, {
+      await axios.patch(`https://backend-messportal.onrender.com/api/complaints/${id}`, { status }, {
         withCredentials: true,
       });
       setComplaints((prevComplaints) =>
@@ -118,7 +118,7 @@ const AllComplaints = () => {
     try {
       setLoadingSendingComment(true);
       await axios.put(
-        `http://localhost:8080/api/complaints/escalate/${complaintId}`,
+        `https://backend-messportal.onrender.com/api/complaints/escalate/${complaintId}`,
         { comment },
         {
           headers: {
@@ -142,7 +142,7 @@ const AllComplaints = () => {
   const fetchComments = async (id) => {
     setLoadingFetchingComments(true);
     try {
-      const res = await axios.get(`http://localhost:8080/api/complaints/comment/${id}`, {
+      const res = await axios.get(`https://backend-messportal.onrender.com/api/complaints/comment/${id}`, {
         withCredentials: true,
       });
       setComplaintComments(res.data);

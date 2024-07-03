@@ -11,7 +11,7 @@ export const useGetMonthlyBills = () => {
     const fetchMonthlyBills = async () => {
         try {
             const res = await axios.post(
-              `http://localhost:8080/api/bills/${currentUser.registrationNumber}`,
+              `https://backend-messportal.onrender.com/api/bills/${currentUser.registrationNumber}`,
               { month, year },
               { withCredentials: true }
             ); 

@@ -9,7 +9,7 @@ export const useGetAllNotices = () => {
 
     const fetchAllNotices = async () => {
         try {
-            const res = await axios.get("http://localhost:8080/api/notice", {
+            const res = await axios.get("https://backend-messportal.onrender.com/api/notice", {
                 withCredentials: true,
             });
             console.log(res?.data);

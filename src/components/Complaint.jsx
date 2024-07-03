@@ -28,7 +28,7 @@ const Complaint = ({ complaint }) => {
   const handleUpvote = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/complaints/upvote/${complaint?._id}`,
+        `https://backend-messportal.onrender.com/api/complaints/upvote/${complaint?._id}`,
         {},
         { withCredentials: true }
       );
@@ -45,7 +45,7 @@ const Complaint = ({ complaint }) => {
     try {
       axios.defaults.withCredentials = true;
       const res = await axios.post(
-        `http://localhost:8080/api/complaints/downvote/${complaint?._id}`,
+        `https://backend-messportal.onrender.com/api/complaints/downvote/${complaint?._id}`,
         {},
         { withCredentials: true }
       );
@@ -61,7 +61,7 @@ const Complaint = ({ complaint }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/complaints/comment/${complaint?._id}`,
+        `https://backend-messportal.onrender.com/api/complaints/comment/${complaint?._id}`,
         { text: commentText },
         { withCredentials: true }
       );
@@ -77,7 +77,7 @@ const Complaint = ({ complaint }) => {
     try {
       axios.defaults.withCredentials = true;
       const res = await axios.delete(
-        `http://localhost:8080/api/complaints/delete/${id}`
+        `https://backend-messportal.onrender.com/api/complaints/delete/${id}`
       );
       dispatch(getRefresh());
       toast.success(res?.data.message);
@@ -90,7 +90,7 @@ const Complaint = ({ complaint }) => {
     try {
       axios.defaults.withCredentials = true;
       const res = await axios.delete(
-        `http://localhost:8080/api/complaints/comment/${complaint._id}/${commentId}`
+        `https://backend-messportal.onrender.com/api/complaints/comment/${complaint._id}/${commentId}`
       );
       console.log('deleteComment: ',res);
       if (res?.data.success === false) {

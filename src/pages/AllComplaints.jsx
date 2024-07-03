@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
 import Complaint from "../components/Complaint";
 import CreatePost from "./CreatePost";
 import useGetAllComplaints from "../hooks/useGetAllComplaints";
 import { useSelector } from "react-redux";
 
 const AllComplaints = () => {
-  const {allComplaints} = useSelector(state=>state.complaint); 
   useGetAllComplaints() ;
+  const {allComplaints} = useSelector(state=>state.complaint); 
 
   return (
     <div className="bg-gray-100 min-h-screen p-4 rounded-lg">

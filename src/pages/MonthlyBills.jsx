@@ -29,7 +29,7 @@ const MonthlyBills = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/bills/studentbill",
+        "https://backend-messportal.onrender.com/api/bills/studentbill",
         { month, year },
         { withCredentials: true }
       );

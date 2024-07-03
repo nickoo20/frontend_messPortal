@@ -19,7 +19,7 @@ const ToggleHostelChange = () => {
     try {
       const token = Cookies.get("access_token");
       const response = await axios.get(
-        `http://localhost:8080/api/toggle-hostel-change`,
+        `https://backend-messportal.onrender.com/api/toggle-hostel-change`,
         {
           withCredentials: true,
         }
@@ -41,7 +41,7 @@ const ToggleHostelChange = () => {
       const decoded = jwtDecode(token);
 
       const response = await axios.put(
-        `http://localhost:8080/api/toggle-hostel-change`,{
+        `https://backend-messportal.onrender.com/api/toggle-hostel-change`,{
           enableHostelChange: !enableHostelChange
         },
         {

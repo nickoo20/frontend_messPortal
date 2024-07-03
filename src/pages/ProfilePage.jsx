@@ -26,7 +26,7 @@ const ProfilePage = () => {
     if (id && currentUser?._id !== id) {
       const fetchUserData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/api/user/${id}`, {
+          const response = await axios.get(`https://backend-messportal.onrender.com/api/user/${id}`, {
             withCredentials: true,
           });
           setFormData({
@@ -86,7 +86,7 @@ const ProfilePage = () => {
         ...(hostelName && { hostelName }),
       };
 
-      const response = await axios.post(`http://localhost:8080/api/user/update/${currentUser?._id}`, updateData, {
+      const response = await axios.post(`https://backend-messportal.onrender.com8080/api/user/update/${currentUser?._id}`, updateData, {
         withCredentials: true,
       });
       console.log(response)

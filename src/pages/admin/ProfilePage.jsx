@@ -75,7 +75,7 @@ const ProfilePage = () => {
       };
 
       console.log("Updating with data: ", updateData);
-      const res = await axios.post(`http://localhost:8080/api/admin/update/${user?._id}`, updateData, {
+      const res = await axios.post(`https://backend-messportal.onrender.com/api/admin/update/${user?._id}`, updateData, {
         withCredentials: true,
       });
 

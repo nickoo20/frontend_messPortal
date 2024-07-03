@@ -18,7 +18,7 @@ const ManageMr = () => {
   const fetchStudents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8080/api/mr/all');
+      const response = await axios.get('https://backend-messportal.onrender.com/api/mr/all');
       setStudents(response.data);
       setLoading(false);
       if (response.data.length === 0) setText('No MR assigned');
@@ -34,7 +34,7 @@ const ManageMr = () => {
 
   const handleRemoveMr = async (registrationNumber) => {
     try {
-      await axios.patch(`http://localhost:8080/api/mr/remove/${registrationNumber}`);
+      await axios.patch(`https://backend-messportal.onrender.com/api/mr/remove/${registrationNumber}`);
       fetchStudents();
       toast.success('MR removed successfully');
     } catch (error) {
@@ -45,7 +45,7 @@ const ManageMr = () => {
 
   const handleAddMr = async (registrationNumber) => {
     try {
-      await axios.patch(`http://localhost:8080/api/mr/add/${registrationNumber}`);
+      await axios.patch(`https://backend-messportal.onrender.com/api/mr/add/${registrationNumber}`);
       fetchStudents();
       setSelectedOption('remove');
       toast.success('MR added successfully');

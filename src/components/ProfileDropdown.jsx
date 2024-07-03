@@ -23,7 +23,7 @@ const ProfileDropdown = () => {
       token: "",
     });
     try {
-     const response= await axios.post("http://localhost:8080/api/auth/logout-student");
+     const response= await axios.post("https://backend-messportal.onrender.com/api/auth/logout-student");
     // Cookies.remove('access_token');
     } catch (error) {
       const msg = error.message;

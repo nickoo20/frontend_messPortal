@@ -15,7 +15,7 @@ const LatestMenu = () => {
         const fetchLatestMenu = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:8080/api/menu/latest');
+                const response = await axios.get('https://backend-messportal.onrender.com/api/menu/latest');
                 setMenu(response.data);
                 setLoading(false);
             } catch (error) {
@@ -61,7 +61,7 @@ const LatestMenu = () => {
                     {menu.pdfPath && (
                         <div className="mt-4 text-center">
                             <a
-                                href={`http://localhost:8080/public/menus/${menu.pdfPath}`}
+                                href={`https://backend-messportal.onrender.com/public/menus/${menu.pdfPath}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 download={`menu_${menu.month}_${menu.year}.pdf`}

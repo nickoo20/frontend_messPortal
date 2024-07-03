@@ -16,7 +16,7 @@ const FestCharge = () => {
       console.log(month);
       console.log(year);
       //console.log(billPerDay);
-      const res = await axios.post("http://localhost:8080/api/bills/check-fest", {
+      const res = await axios.post("https://backend-messportal.onrender.com/api/bills/check-fest", {
         month,
         year,
         charge,
@@ -28,7 +28,7 @@ const FestCharge = () => {
       console.log(res);
       if (res.data.exists) {
         if (window.confirm('This entry already exists. Do you want to replace it?')) {
-          await axios.post('http://localhost:8080/api/bills/update-fest', { month, year, charge, registrationNumber, festival }, {
+          await axios.post('https://backend-messportal.onrender.com/api/bills/update-fest', { month, year, charge, registrationNumber, festival }, {
             withCredentials: true
           });
           toast.success('Entry replaced successfully.');

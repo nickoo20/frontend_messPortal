@@ -49,7 +49,7 @@ const LoginStudent = () => {
     try {
       dispatch(signInStart());
       const res = await axios.post(
-        "http://localhost:8080/api/auth/login-student",
+        "https://backend-messportal.onrender.com/api/auth/login-student",
         formData,
         {
           headers: {
@@ -58,7 +58,7 @@ const LoginStudent = () => {
           withCredentials: true,
         }
       );
-      console.log(res);
+      // console.log(res);
       if (res?.data?.success === false) {
         setFormErrors({ apiError: res?.data.message });
         dispatch(signInFailure(res?.data?.message));

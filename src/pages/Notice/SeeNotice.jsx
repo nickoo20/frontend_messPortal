@@ -20,7 +20,7 @@ const SeeNotice = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/api/notice/delete/${id}`, {
+            await axios.delete(`https://backend-messportal.onrender.com/api/notice/delete/${id}`, {
                 withCredentials: true,
             });
             dispatch(getRefresh());

@@ -23,7 +23,7 @@ const CreatePost = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/complaints/create",
+        "https://backend-messportal.onrender.com/api/complaints/create",
         {
           title,
           description,

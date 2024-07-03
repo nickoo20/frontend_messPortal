@@ -46,7 +46,7 @@ const RegisterAdmin = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/admin/register-admin",
+        "https://backend-messportal.onrender.com/api/admin/register-admin",
         formData,
         {
           withCredentials: true,

@@ -16,7 +16,7 @@ const Billcomp = () => {
 
   const fetchBills = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/bills`, {
+      const response = await axios.get(`https://backend-messportal.onrender.com/api/bills`, {
         withCredentials: true,
         params: { month, year, HostelName },
       });

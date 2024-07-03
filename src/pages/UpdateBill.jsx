@@ -16,7 +16,7 @@ const UpdateBill = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/bills/check-entry", {
+      const res = await axios.post("https://backend-messportal.onrender.com/api/bills/check-entry", {
         month,
         year,
         billPerDay,
@@ -29,7 +29,7 @@ const UpdateBill = () => {
         setEntryData({ month, year, billPerDay, serviceCharge });
         setModalIsOpen(true);
       } else {
-        await axios.post('http://localhost:8080/api/bills/update-billPerDay', { month, year, billPerDay, serviceCharge }, {
+        await axios.post('https://backend-messportal.onrender.com/api/bills/update-billPerDay', { month, year, billPerDay, serviceCharge }, {
           withCredentials: true
         });
         toast.success('Entry created successfully.');
@@ -42,7 +42,7 @@ const UpdateBill = () => {
 
   const handleReplaceEntry = async () => {
     try {
-      await axios.post('http://localhost:8080/api/bills/update-billPerDay', entryData, {
+      await axios.post('https://backend-messportal.onrender.com/api/bills/update-billPerDay', entryData, {
         withCredentials: true
       });
       toast.success('Entry replaced successfully.');
